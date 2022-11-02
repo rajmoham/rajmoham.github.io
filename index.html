@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Raj Mohammad</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7d8f1910d8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("4iv2o637aA7jR3e4y");
+    })();
+    </script>
+</head>
+
+<body onscroll="hideShapes()" onmousemove="moveBackground(event)">
+    <section id="landing-page" >
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/logo.svg" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link" onclick="toggleModal()"><a href="#"
+                        class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a></li>
+                <li class="nav__link"><a href="#"
+                        class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a></li>
+                <li class="nav__link" onclick="toggleModal()"><a href="#"
+                        class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a></li>
+                <li class="nav__link click" onclick="toggleContrast()"><a href="#"
+                        class="nav__link--anchor"><i
+                            class="fa-solid fa-circle-half-stroke"></i></a></li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="header__title title">Hey there,</h1>
+                <h1 class="header__title title text-green">My name's Raj</h1>
+                <p class="header__para">
+                    I am currently studying Computer Science at King's College London.
+                    I have a keen passion for <b class="text-green">Software Development</b> and learning about <b
+                        class="text-green">Artifical Intelligence.</b>
+                </p>
+                <div class="social__list">
+                    <a href="https://www.linkedin.com/in/raj-mohammad" target="_blank" class="social__link click">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/rajmoham" target="_blank" class="social__link click">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="./assets/Raj Mohammad - CV.pdf" target="_blank" class="social__link click">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fas fa-envelope"></i>
+            </button>
+        </a>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">About Me</h3>
+                <h4 class="modal__subtitle modal__subtitle--about">Student, Software Engineer</h4>
+                <p class="modal__para">
+                    I'm an 18 year-old and <b class="text-green">motivated</b> individual looking for a role as a <b
+                        class="text-green">Software Engineer</b>
+                    <br>
+                    With a solid <b class="text-green">mathematical background</b>, I love working on solving difficult
+                    problems and bring value to teams with great communication skills.
+                    <br>
+                    I am also a <b class="text-green">quick learner</b> and have no trouble adapting to new and unusual
+                    situations.
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language"><img class="modal__language--img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                            <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language"><img class="modal__language--img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                            <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language"><img class="modal__language--img"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                            <span class="language__name">React</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">Reach out to me!</h3>
+                <h4 class="modal__subtitle modal__subtitle--contact">Currently looking out for new oppotunities.</h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">E-mail</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send Message</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! I will get back to you soon 😄
+                </div>
+            </div>
+        </div>
+        <img src="./assets/circle.svg" class="shape shape--0">
+        <img src="./assets/swiggle.svg" class="shape shape--1">
+        <img src="./assets/triangle.svg" class="shape shape--2">
+        <img src="./assets/semi-circle.svg" class="shape shape--3">
+        <img src="./assets/circle.svg" class="shape shape--4">
+        <img src="./assets/swiggle.svg" class="shape shape--5">
+        <img src="./assets/triangle.svg" class="shape shape--6">
+        <img src="./assets/semi-circle.svg" class="shape shape--7">
+        <img src="./assets/circle.svg" class="shape shape--8">
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row project__row">
+                <h1 class="section__title">Have a look at some of <span class="text-green">my projects</span></h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/projects/e-commerce/e-commerce.png" class="project__img" alt="">
+                            <div class="project__description">
+                                <div class="project__description--title-container">
+                                    <h3 class="project__description--title"><i class="fas fa-user"
+                                            aria-hidden="true"></i> Movie Library - </h3>
+                                    <figure>
+                                        <img class="project__logo--img" src="./assets/projects/e-commerce/logo.png"
+                                            alt="">
+                                    </figure>
+                                </div>
+                                <h4 class="project__description--sub-title">HTML, CSS, JavaScript</h4>
+                                <p class="project__description--para">A template landing-page for a movie streaming
+                                    service with a modern user interface layout and
+                                    responsive design compatible with desktop, tablet, and mobile.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/rajmoham/E-Commerce/" target="_blank"
+                                        class="project__description--link"> <i class="fab fa-github"></i></a>
+                                    <a href="https://ecommerce-delta-pied.vercel.app/" target="_blank"
+                                        class="project__description--link"> <i class="fas fa-globe"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/projects/JR2/landing_page.jpeg" class="project__img" alt="">
+                            <div class="project__description">
+                                <div class="project__description--title-container">
+                                    <h3 class="project__description--title"><i class="fas fa-users"
+                                            aria-hidden="true"></i> Online Shopping UX - </h3>
+                                    <figure>
+                                        <img class="project__logo--img" src="./assets/projects/JR2/logo.png" alt="">
+                                    </figure>
+                                </div>
+                                <h4 class="project__description--sub-title">HTML, CSS, C#</h4>
+                                <p class="project__description--para">The end-product of a research project to improve
+                                    the online shopping user
+                                    experience. The webpage is a baseline that incorporates techniques to engage user
+                                    interactions and maintain
+                                    shoppers attention.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="./assets/projects/JR2/UX Design.pdf" target="_blank"
+                                        class="project__description--link"> <i class="fas fa-file-pdf"></i></a>
+                                    <a href="https://github.com/rajmoham/KingsCertificate/" target="_blank"
+                                        class="project__description--link"> <i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/projects/U-Receipts/dashboard.jpg" class="project__img" alt="">
+                            <div class="project__description">
+                                <div class="project__description--title-container">
+                                    <h3 class="project__description--title"><i class="fas fa-users"
+                                            aria-hidden="true"></i> U-Receipts - </h3>
+                                    <figure>
+                                        <img class="project__logo--img" src="./assets/projects/U-Receipts/logo.png"
+                                            alt="">
+                                    </figure>
+                                </div>
+                                <h4 class="project__description--sub-title">HTML, CSS, JavaScript</h4>
+                                <p class="project__description--para">
+                                    A universal,receipts-storing, website application created as part of a 24Hr
+                                    Hackathon competition.
+                                    The concept software allows users to create an account and store cards that they use
+                                    so
+                                    after a transaction a virtual receipt is sent to their account instead of printing a
+                                    physical one.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="./assets/projects/U-Receipts/U-Receipts.pptx" target="_blank"
+                                        class="project__description--link"> <i class="fas fa-file-powerpoint"></i></a>
+                                    <a href="https://github.com/rajmoham/hackathon/" target="_blank"
+                                        class="project__description--link"> <i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/project.png" class="project__img" alt="">
+                            <div class="project__description">
+                                <h3 class="project__description--title">Project Title</h3>
+                                <h4 class="project__description--sub-title">HTML, CSS, JavaScript</h4>
+                                <p class="project__description--para">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                    cillum dolore eu fugiat nulla pariatur</p>
+                                <a href="" class="project__description--link">Click here to learn more</a>
+                            </div>
+                        </div>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+<footer>
+    <div class="row footer__row">
+        <a href="#" class="footer__anchor">
+            <figure class="footer__logo">
+                <img src="./assets/logo.svg" class="footer__logo--img" alt="">
+            </figure>
+            <span class="footer__logo--popper">Top <i class="fas fa-arrow-up"></i></span>
+        </a>
+        <hr class="line-break">
+        <div class="footer__social--list">
+            <a href="https://www.linkedin.com/in/raj-mohammad/" target="_blank"
+                class="footer__social--link link__hover-effect link__hover-effect--white">LinkedIn</a>
+            <a href="https://github.com/rajmoham/" target="_blank"
+                class="footer__social--link link__hover-effect link__hover-effect--white">GitHub</a>
+            <a href="#" onclick="toggleModal()"
+                class="footer__social--link link__hover-effect link__hover-effect--white">Contact</a>
+            <a href="./assets/Raj Mohammad - CV.pdf" target="_blank"
+                class="footer__social--link link__hover-effect link__hover-effect--white">Resume</a>
+        </div>
+        <div class="footer__text">Copyright © 2022 Raj Mohammad</div>
+    </div>
+</footer>
+
+</html>

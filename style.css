@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 
+
 *{
     margin: 0;
     padding: 0;
@@ -113,6 +114,7 @@ a{
 
 .section__title{
     margin-bottom: 40px;
+    text-align: center;
 }
 
 button{
@@ -159,7 +161,7 @@ nav, .scroll, .header{
 }
 
 .dark-theme #personal-logo{
-    filter: invert(1);
+    filter: none;
 }
 
 .dark-theme .scroll__icon{
@@ -174,6 +176,10 @@ nav, .scroll, .header{
 .dark-theme .mail__btn{
     background-color: white;
     color: #242424;
+}
+
+.dark-theme .project__wrapper{
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.45);
 }
 
 /*
@@ -293,6 +299,7 @@ nav{
 #personal-logo{
     height: 60px;
     width: 60px;
+    filter: invert(1);
 }
 
 .nav__link--list{
@@ -501,7 +508,7 @@ nav{
 */
 
 .project{
-    margin-bottom: 200px;
+    margin-bottom: 150px;
 }
 
 
@@ -515,7 +522,7 @@ nav{
 }
 
 .project__wrapper{
-    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.45);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
@@ -551,7 +558,7 @@ nav{
 .project__description{
     position: absolute;
     top: 50%;
-    left: 90px;
+    left: 10%;
     transform: translateY(100%);
     max-width: 550px;
     z-index: 3;
@@ -598,7 +605,7 @@ nav{
 .project__logo--img{
     height: 3rem;
     margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 12px;
 }
 
 /*
@@ -630,7 +637,6 @@ footer{
 .footer__logo--img{
     width: 70px;
     height: 70px;
-    filter: invert(1);
 }
 
 .footer__social--link, .footer__logo--popper{
@@ -758,6 +764,10 @@ footer{
         font-size: 50px;
     }
 
+    .project{
+        margin-bottom: 100px;
+    }
+
     .header__para{
         font-size: 18px;
     }
@@ -777,8 +787,23 @@ footer{
         text-align: center;
     }
 
+    .project__description--title{
+        font-size: 25px;
+    }
+
+    .project__description--title-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .project__description--sub-title{
-        margin-bottom: 8px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    .project__logo--img{
+        font-size: 2.5rem;
     }
 
     .modal__half{

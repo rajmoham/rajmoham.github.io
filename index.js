@@ -1,5 +1,7 @@
 const scaleFactor = 1/20;
 
+screen.orientation.lock("portrait-primary")
+
 function toggleContrast()
 {
     document.body.classList.toggle("dark-theme")

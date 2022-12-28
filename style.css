@@ -741,6 +741,13 @@ footer{
     color: aqua;
 }
 
+@media (max-width: 960px)
+{
+    .modal__languages{
+        display: none;
+    }
+}
+
 @media (max-width: 768px)
 {
     .title{

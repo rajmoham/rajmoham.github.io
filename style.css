@@ -191,6 +191,10 @@ nav, .scroll, .header{
     
 */
 
+.dark-theme-toggle{
+    position: relative;
+}
+
 #landing-page{
     min-height: 100vh;
 }
@@ -289,6 +293,7 @@ nav, .scroll, .header{
 */
 
 nav{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -297,6 +302,12 @@ nav{
     margin: 0 auto;
     padding: 0 20px;
     height: 100px;
+}
+
+.dark-theme-text{
+    position: absolute;
+    right: 25px;
+    top: 60px;
 }
 
 #personal-logo{

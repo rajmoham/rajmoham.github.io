@@ -5,6 +5,7 @@ screen.orientation.lock("portrait-primary")
 function toggleContrast()
 {
     document.body.classList.toggle("dark-theme")
+    document.querySelector(".dark-theme-text").style.display = "none";
 }
 
 function moveBackground(event)

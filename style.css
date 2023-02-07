@@ -90,7 +90,17 @@ input:focus, textarea:focus{
     font-size: 76px;
     margin-bottom: 12px;
     text-align: left;
-    line-height: 1;   
+    line-height: 1;
+    font-weight: 900;   
+    letter-spacing: 2px;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.bold{
+    font-weight: bold;
 }
 
 .container{

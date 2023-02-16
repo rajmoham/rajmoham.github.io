@@ -174,7 +174,7 @@ nav, .scroll, .header{
 }
 
 .dark-theme #personal-logo{
-    filter: none;
+    filter: drop-shadow(0 0 5px white);
 }
 
 .dark-theme .scroll__icon{
@@ -246,8 +246,16 @@ nav, .scroll, .header{
     transition: all 300ms ease;
 }
 
+.dark-theme .social__link{
+    filter: drop-shadow(0 0 10px #459c5d);
+}
+
 .social__link:hover{
     background-color: #235130;
+}
+
+.dark-theme .social__link:hover{
+    filter: drop-shadow(0 0 15px #ffffff);
 }
 
 .mail__btn{
@@ -721,6 +729,7 @@ footer{
     left: 15vw;
     color: aqua;
 }
+
 .shape--1{
     top: 15vh;
     left: 50vw;
@@ -759,8 +768,19 @@ footer{
 .shape--8{
     top: 80vh;
     left: 80vw;
-    color: aqua;
 }
+
+.dark-theme .shape--0, .dark-theme .shape--4, .dark-theme .shape--8{
+    filter: drop-shadow(0 0 10px #fc08fc)
+}
+
+.dark-theme .shape--1, .dark-theme .shape--3, .dark-theme .shape--5, .dark-theme .shape--7{
+    filter: drop-shadow(0 0 10px #51eaf5)
+}
+.dark-theme .shape--2, .dark-theme .shape--6{
+    filter: drop-shadow(0 0 10px #a03bff)
+}
+
 
 @media (max-width: 960px)
 {

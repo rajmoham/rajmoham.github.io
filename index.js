@@ -1,7 +1,5 @@
 const scaleFactor = 1/20;
 
-screen.orientation.lock("portrait-primary")
-
 function toggleContrast()
 {
     document.body.classList.toggle("dark-theme")
@@ -55,18 +53,18 @@ function hideShapes()
     const landingHeight = document.querySelector("#landing-page").clientHeight
     const shapes = document.querySelectorAll(".shape")
 
-    if (yScroll > landingHeight * 0.6)
+    if (yScroll > landingHeight * 0.7)
     {
         for (let i = 0; i < shapes.length; i++)
         {
-            shapes[i].style.opacity = "0"
+            shapes[i].style.display = "none"
         }
     }
     else
     {
         for (let i = 0; i < shapes.length; i++)
         {
-            shapes[i].style.opacity = "1"
+            shapes[i].style.display = "block"
         }
     }
 
